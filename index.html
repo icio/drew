@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drew</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: 
+                radial-gradient(
+                    at bottom right,
+                    rgba(128, 128, 128, 0.5), 
+                    transparent 500px
+                );
+            min-height: 400px;
+        }
+
+        #wall {
+            position: relative;
+            height: 100%;
+
+            width: 100%;
+            max-width: 713px;
+            margin: 0 auto;
+        }
+        #gallery {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            max-height: 1044px;
+        }
+        #pad {
+            width: 100%;
+            padding-top: 146.4%;
+        }
+        #painting {
+            position: absolute;
+            transform: perspective(593px) rotateY(-3deg);
+            bottom: 49.5%;
+            width: 57.4%;
+            height: 39.6%;
+            left: 19.9%;
+        }
+        #painting img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        #drew {
+            background-image: url(drew.png);
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wall">
+        <div id="gallery">
+            <div id="pad"></div>
+            <div id="painting"><img id="target" /></div>
+            <div id="drew"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('target').src = window.location.search.substr(1) || 'https://media2.giphy.com/media/13i9oB0JJNVqb6/giphy.gif';
+    </script>
+</body>
+</html>
